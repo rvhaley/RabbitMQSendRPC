@@ -15,7 +15,7 @@ import static com.trylag.rabbitmqsendrpc.constants.Constants.*;
  */
 public class Client {
 
-    private static final int VALUE_TO_DOUBLE = 210;
+    private static final String JSON = "{\"ssn\":1605789787,\"creditScore\":598,\"loanAmount\":10.0,\"loanDuration\":360}";
 
     private Connection connection;
     private Channel channel;
@@ -71,8 +71,8 @@ public class Client {
         try {
             client = new Client();
 
-            System.out.println(" [X] Sending request: " + VALUE_TO_DOUBLE);
-            response = client.call(Integer.toString(VALUE_TO_DOUBLE));
+            System.out.println(" [X] Sending request: " + JSON);
+            response = client.call(JSON);
             System.out.println(" [.] Got '" + response + "'");
         } catch (Exception e) {
             e.printStackTrace();
